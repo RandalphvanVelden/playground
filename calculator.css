@@ -1,0 +1,32 @@
+.grid-container {
+    display: grid;
+    grid-column-gap: 5pt;
+}
+
+img {
+    position: absolute;
+    width: 56%;
+    margin-right: 22%;
+    margin-left: 22%;
+    z-index: -1;
+}
+
+.calculator {
+    position: relative;
+    left: 33%;
+    top: 140pt;
+    z-index: 1;
+}
+
+button {
+    width: 90pt;
+    height: 70pt;
+    margin-bottom: 440pt;
+    opacity: 1;
+    background-color: red;
+}
+
+button:hover {
+    background-color: red;
+    box-shadow: 5pt 5pt grey;
+}
