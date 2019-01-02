@@ -1,32 +1,71 @@
-.grid-container {
-    display: grid;
-    grid-column-gap: 5pt;
+body {
+    background-image: url("backgroundcalculator.jpg")
 }
 
 img {
     position: absolute;
     width: 56%;
-    margin-right: 22%;
     margin-left: 22%;
+    margin-right: 22%;
     z-index: -1;
+    margin-top: -4%;
+}
+
+#input {
+    position: absolute;
+    height: 13.5%;
+    width: 33%;
+    margin-top: 6%;
+    margin-left: 33.5%;
+    margin-right: auto;
+    align-content: center;
+    border-radius: 10pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40pt;
+    text-align: right;
+    padding-right: 10pt;
+    padding-top: 10pt;
 }
 
 .calculator {
-    position: relative;
-    left: 33%;
-    top: 140pt;
-    z-index: 1;
+    position: absolute;
+    margin-top: 16.5%;
+    margin-left: 32.5%;
+    margin-right: auto;
+    align-content: center;
 }
 
-button {
+.btn {
     width: 90pt;
     height: 70pt;
-    margin-bottom: 440pt;
-    opacity: 1;
-    background-color: red;
+    opacity: 0;
+    background-color: white;
+    margin-left: 10pt;
+    margin-bottom: 20pt;
 }
 
-button:hover {
-    background-color: red;
-    box-shadow: 5pt 5pt grey;
+#calc {
+    width: 90pt;
+    height: 70pt;
+    opacity: 0;
+    background-color: white;
+    margin-left: 10pt;
+    margin-bottom: 10pt;
+}
+
+.two {
+    width: 90pt;
+    height: 70pt;
+    opacity: 0;
+    background-color: white;
+    margin-left: 10pt;
+    margin-bottom: 10pt;
+}
+
+#numberone {
+    display: none;
+}
+
+#numbertwo {
+    display: none;
 }
