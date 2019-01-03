@@ -111,14 +111,66 @@ echo "$naam je toegangsprijs is: \$ $x";
 else{
     echo "$naam je toegangsprijs is: \$ $prijs";
 }
+echo "<br>";
 
+// alle startwaarden
+$prijsArtikel = 100;
+$leeftijdKoper = 70;
+$teBetalen = $prijsArtikel;
+$woonplaatsKoper = "Enschede";
+
+// alle bewerkingen
+if ($woonplaatsKoper == "Almelo")
+{$teBetalen = $teBetalen * 2;
+}
+else{
+    if ($leeftijdKoper <= 18)
+    $korting = $prijsArtikel*0.1;
+
+    if ($leeftijdKoper >= 65)
+    $korting = $prijsArtikel*0.05;
+
+    $teBetalen = $prijsArtikel - $korting;
+}
+
+
+// alle output
+// verwacht: iedereen ouder dan 18 volle mep betalen
+//verwacht: idereen 18 jaar of jonger 10% korting
+// verwacht: iedereen van 65 jaar of ouder 5% korting
+// verwacht: iedereen uit enschede, 2* zo duur
+echo $teBetalen;
 
 echo "<br>";
 for($x = 0; $x <= 10; $x++){
     echo "Het nummer is: $x <br>";
 }
 
-$x = -5;
+
+// tel 1t/m5 op met een loop
+$totaal = 0;
+
+for($getal = 1; $getal <= 50; $getal = $getal + 2){
+$totaal = $totaal + $getal;
+echo "$getal <br>";
+//echo "$totaal<br>";
+}
+ echo $totaal;
+echo "<br><hr><br>";
+
+$totaal = 0;
+$getal = 1;
+
+while($getal <= 100){
+$totaal = $totaal + ($getal *10);
+echo "($getal * 10)=".($getal*10). "<br>";
+$getal = $getal + 1;
+}
+echo "totaal is $totaal";
+
+echo "<br><hr><br>";
+
+$x = 1;
 
 while($x <= 5){
     echo "Het nummer is: $x <br>";
@@ -150,5 +202,17 @@ echo $_GET["voornaam"]."<br>";
 echo "De leeftijd is".$_GET["leeftijd"]."jaar oud<br>";
 ?>
 
+<?php
+//tel van een tot 100 met een while loop
+$totaal = 0;
+$getal = 1;
+
+while($getal <= 100){
+$totaal = $totaal + ($getal * 10);
+echo "(getal * 10) =".($getal * 10)."<br>";
+$getal++;
+}
+echo $totaal;
+?>
 </body>
 </html>
