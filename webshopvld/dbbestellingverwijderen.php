@@ -1,15 +1,15 @@
 <?php
 
-$productid=$_GET["productid"];
+$bestellingid=$_GET["bestellingenid"];
 
 try{
     $conn = new PDO("mysql:host=127.0.0.1; dbname=webshopdb", 'root', '');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$stmt = $conn->prepare("DELETE FROM producten WHERE id=:fid");
+$stmt = $conn->prepare("DELETE FROM bestellingen WHERE id=:fid");
 
 $stmt->execute([
-    'fid' => $productid
+    'fid' => $bestellingid
 ]);
 
 }
@@ -20,6 +20,6 @@ catch(PDOException $e) {
 
 $conn = NULL;
 
-header("Location: index.php");
+header("Location: bestellingindex.php");
 
 ?>

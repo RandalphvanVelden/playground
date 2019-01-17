@@ -22,32 +22,33 @@
 <?php
 include ("navbar.php");
 
-if(isset($_GET['naamzoeken'])){
-$naamzoeken=$_GET['naamzoeken'];
-}
-else {
-    $naamzoeken= '';
-}
+// if(isset($_GET['naamzoeken'])){
+// $naamzoeken=$_GET['naamzoeken'];
+// }
+// else {
+//     $naamzoeken= '';
+// }
 try{
     $conn = new PDO("mysql:host=127.0.0.1; dbname=webshopdb", 'root', '');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->query("SELECT * FROM producten WHERE naam LIKE '%$naamzoeken%'");
+    $stmt = $conn->query("SELECT * FROM bestellingen");
 
 echo "<table class='table table-striped' id = 'table1'>
     <thead>
     <tr>
+    <th>email</th>
     <th>product</th>
-    <th>prijs</th>
+    <th>te betalen</th>
     </tr>
     </thead>
     <tbody>";
     While($row=$stmt->fetch()){
         echo "<tr>";
-        echo "<td>" . $row['naam'] . "</td><td>" . $row['prijs'] . "</td>";
-        echo "<td><a class='btn1' href='dbverwijderen.php?productid=" . $row['id'] . "'><i class='fas fa-trash-alt butt' ></i></a></td>";
-        echo "<td><a class='btn2' href='formulierbewerken.php?productid=" . $row['id'] . "'><i class='fas fa-edit butt'></i></td>";
-        echo "<td><a class='btn3' href='koopproduct.php?productid=" . $row['id'] . "'><i class='fas fa-shopping-cart butt'></i></td>";
+        echo "<td>" . $row['email'] . "</td><td>" . $row['productid']."</td><td>".$row['tebetalen']. "</td>";
+        echo "<td><a class='btn1' href='dbbestellingverwijderen.php?bestellingenid=" . $row['id'] . "'><i class='fas fa-trash-alt butt' ></i></a></td>";
+        // echo "<td><a class='btn2' href='formulierbewerken.php?bestellingenid=" . $row['id'] . "'><i class='fas fa-edit butt'></i></td>";
+        
     echo"</tr>";
     }
      echo "</tbody>
@@ -59,7 +60,7 @@ catch(PDOException $e) {
 
 ?>
 
-<a href="index.html" class="btn btn-success" id="pt">Product toevoegen</a>
+<a href="index.php" class="btn btn-success" id="pt">Product toevoegen</a>
 
   
 
