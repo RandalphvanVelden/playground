@@ -11,60 +11,26 @@
     <!-- <script src="main.js"></script> -->
 </head>
 <body>
-    
-
 <?php
-include ("navbar.php");
-
-if(isset($_GET['naamzoeken'])){
-$naamzoeken=$_GET['naamzoeken'];
-}
-else {
-    $naamzoeken= '';
-}
-try{
-    $conn = new PDO("mysql:host=127.0.0.1; dbname=webshopdb", 'root', '');
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $stmt = $conn->query("SELECT * FROM producten WHERE naam LIKE '%$naamzoeken%'");
-
-echo "<table class='table table-striped' id = 'table1'>
-    <thead>
-    <tr>
-    <th>product</th>
-    <th>prijs</th>
-    </tr>
-    </thead>
-    <tbody>";
-    While($row=$stmt->fetch()){
-        echo "<tr>";
-        echo "<td>" . $row['naam'] . "</td><td>" . $row['prijs'] . "</td>";
-        echo "<td><a class='btn1' href='dbverwijderen.php?productid=" . $row['id'] . "'><i class='fas fa-trash-alt butt' ></i></a></td>";
-        echo "<td><a class='btn2' href='formulierbewerken.php?productid=" . $row['id'] . "'><i class='fas fa-edit butt'></i></td>";
-        echo "<td><a class='btn3' href='koopproduct.php?productid=" . $row['id'] . "'><i class='fas fa-shopping-cart butt'></i></td>";
-    echo"</tr>";
-    }
-     echo "</tbody>
-    </table>";
-}
-catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
+$userId= $_GET['userid'];
 ?>
 
-<a href="index.html" class="btn btn-success" id="pt">Product toevoegen</a>
-
-  
-
-
-
-
-
+    <form id ='form' action="dbuseraanpassen.php" method="POST">
+    <div class="form-group">
+        <label for="formGroupExampleInput">NEW USER</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" name="voornaam" placeholder="voornaam">
+        <input type="text" class="form-control" id="formGroupExampleInput" name="achternaam" placeholder="achternaam">
+        <input type="text" class="form-control" id="formGroupExampleInput" name="email" placeholder="email">
+        <input type="text" class="form-control" id="formGroupExampleInput" name="adres" placeholder="adres">
+        <input type="text" class="form-control" id="formGroupExampleInput" name="postcode" placeholder="postcode">
+        <input type="text" class="form-control" id="formGroupExampleInput" name="plaats" placeholder="plaats">
+        <input name="userid" placeholder="user id" value = "<?php echo $userId; ?>">
+    </div>
+    <button type="submit">pas aan</button>
+    </form>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
 </body>
 </html>

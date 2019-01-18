@@ -1,4 +1,6 @@
 <?php
+include ("navbar.php");
+
 $productNaam = $_POST['productnaam'];
 $productPrijs = $_POST['productprijs'];
 

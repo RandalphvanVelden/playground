@@ -13,7 +13,7 @@ try{ $conn = new PDO("mysql:host=127.0.0.1; dbname=webshopdb", 'root', '');
     $stmt->execute([
         'fnaam'=>$productNaam,
         'fprijs'=>$productPrijs,
-        'fid'=>$productId
+        'fid' =>$productId
     ]);
 
 }
