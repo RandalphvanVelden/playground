@@ -10,6 +10,10 @@
     <!-- <script src="main.js"></script> -->
 </head>
 <body>
+<?php
+session_start();
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar fixed-top navbar-dark bg-primary"  id="navie">
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,6 +36,14 @@
       <input class="form-control mr-sm-2" type="text" name="naamzoeken" placeholder="zoek product" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <?php if(isset($_SESSION["id"])){
+      echo $_SESSION['name'];
+      echo'<a href="uitloggen.php" class="btn btn-success" id="pt">uitloggen</a>';
+    }
+    else{
+    echo'<a href="inlog.php" class="btn btn-success" id="pt">inloggen</a>';
+    }
+    ?>
     <a href="userform.php" class="btn btn-success" id="pt">user toevoegen</a>
   </div>
 </div>

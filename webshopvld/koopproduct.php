@@ -1,6 +1,7 @@
 <?php
+session_start();
 $productId=$_GET["productid"];
-$email = "randalph@gmail.com";
+$userid= $_SESSION['id'];
 $teBetalen = 0;
 
 try{$conn = new PDO("mysql:host=127.0.0.1; dbname=webshopdb","root","" );
@@ -15,12 +16,12 @@ $sql ->execute([
         $teBetalen=$teBetalen + $row['prijs'];   
     }
 
-$stmt= $conn->prepare("INSERT INTO bestellingen(productid,email, tebetalen) VALUES (:fid, :femail, :fprijs)");
+$stmt= $conn->prepare("INSERT INTO bestellingen(productid, userid, tebetalen) VALUES (:fid, :fuserid, :fprijs)");
 
 $stmt -> execute([
 'fid'=>$productId,
-'femail'=>$email,
-'fprijs'=>$teBetalen
+'fprijs'=>$teBetalen,
+'fuserid'=>$userid
 ]);
 }
 

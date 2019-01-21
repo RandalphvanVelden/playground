@@ -15,6 +15,7 @@
     <form id ='form' action="dbusertoevoegen.php" method="POST">
     <div class="form-group">
         <label for="formGroupExampleInput">NEW USER</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" name="username" placeholder="gebruikersnaam">
         <input type="text" class="form-control" id="formGroupExampleInput" name="voornaam" placeholder="voornaam">
         <input type="text" class="form-control" id="formGroupExampleInput" name="achternaam" placeholder="achternaam">
         <input type="text" class="form-control" id="formGroupExampleInput" name="email" placeholder="email">

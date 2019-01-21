@@ -1,5 +1,6 @@
 <?php
 $userid = $_POST['userid'];
+$username = $_POST['username'];
 $naam = $_POST['voornaam'];
 $achternaam = $_POST['achternaam'];
 $email = $_POST['email'];
@@ -11,10 +12,11 @@ $plaats = $_POST['plaats'];
 try{ $conn = new PDO("mysql:host=127.0.0.1; dbname=webshopdb", 'root', '');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->prepare('UPDATE users SET voornaam = :fvoornaam, achternaam = :fachternaam, email = :femail, adres = :fadres, postcode = :fpostcode, plaats = :fplaats WHERE id=:fid');
+    $stmt = $conn->prepare('UPDATE users SET username = :fusername, voornaam = :fvoornaam, achternaam = :fachternaam, email = :femail, adres = :fadres, postcode = :fpostcode, plaats = :fplaats WHERE id=:fid');
 
     $stmt -> execute([
         'fid' => $userid,
+        'fusername' => $username,
         'fvoornaam' => $naam,
         'fachternaam' => $achternaam,
         'femail' => $email, 

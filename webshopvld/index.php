@@ -14,6 +14,8 @@
     
 
 <?php
+session_start();
+
 include ("navbar.php");
 
 if(isset($_GET['naamzoeken'])){

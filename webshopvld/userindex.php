@@ -11,12 +11,14 @@
 <body>
 
 <?php
+session_start();
 include ("navbar.php");
+$userid=$_SESSION['id'];
 try{
     $conn = new PDO("mysql:host=127.0.0.1; dbname=webshopdb", 'root', '');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->query("SELECT*FROM users");
+    $stmt = $conn->query("SELECT*FROM users WHERE id = $userid");
 
 echo "<table class='table table-striped' id = 'table1'>
     <thead>
@@ -32,7 +34,7 @@ echo "<table class='table table-striped' id = 'table1'>
     <tbody>";
     While($row=$stmt->fetch()){
         echo "<tr>";
-        echo "<td>" . $row['voornaam'] . "</td><td>" . $row['achternaam'] . "</td><td>" . $row['email'] . "</td><td>".$row['adres'] . "</td>" . "</td><td>".$row['postcode'] . "</td>" . "</td><td>".$row['plaats'] . "</td>";
+        echo "<td>" . $row['username'] . "</td><td>" . $row['voornaam'] . "</td><td>" . $row['achternaam'] . "</td><td>" . $row['email'] . "</td><td>".$row['adres'] . "</td>" . "</td><td>".$row['postcode'] . "</td>" . "</td><td>".$row['plaats'] . "</td>";
         echo "<td><a class='btn1' href='dbuserverwijderen.php?userid=" . $row['id'] . "'><i class='fas fa-trash-alt butt' ></i></a></td>";
         echo "<td><a class='btn2' href='userformaanpassen.php?userid=" . $row['id'] . "'><i class='fas fa-edit butt'></i></td>";
     echo"</tr>";

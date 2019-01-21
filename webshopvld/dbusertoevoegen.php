@@ -1,6 +1,6 @@
 <?php
 
-
+$username = $_POST['username'];
 $naam = $_POST['voornaam'];
 $achternaam = $_POST['achternaam'];
 $email = $_POST['email'];
@@ -17,9 +17,10 @@ if ($wachtwoord == $wachtwoord2){
     try{ $conn = new PDO("mysql:host=127.0.0.1;dbname=webshopdb", 'root', '');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->prepare("INSERT INTO users(voornaam, achternaam, email, adres, postcode, plaats, wachtwoord, rechten) VALUES(:fvoornaam, :fachternaam, :femail, :fadres, :fpostcode, :fplaats, :fwachtwoord, :frechten)");
+    $stmt = $conn->prepare("INSERT INTO users(username, voornaam, achternaam, email, adres, postcode, plaats, wachtwoord, rechten) VALUES(:fusername, :fvoornaam, :fachternaam, :femail, :fadres, :fpostcode, :fplaats, :fwachtwoord, :frechten)");
 
     $stmt -> execute([
+        'fusername' => $username,
         'fvoornaam' => $naam,
         'fachternaam' => $achternaam,
         'femail' => $email, 

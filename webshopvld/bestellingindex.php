@@ -17,14 +17,16 @@
 
 
 <?php
-include ("navbar.php");
+session_start();
 
+include ("navbar.php");
+$userid = $_SESSION['id'];
 
 try{
     $conn = new PDO("mysql:host=127.0.0.1; dbname=webshopdb", 'root', '');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->query("SELECT bestellingen.id, bestellingen.userid, bestellingen.tebetalen, producten.naam FROM bestellingen, producten WHERE bestellingen.productid = producten.id");
+    $stmt = $conn->query("SELECT bestellingen.id, bestellingen.userid, bestellingen.tebetalen, producten.naam FROM bestellingen, producten WHERE bestellingen.productid = producten.id AND bestellingen.userid = $userid");
 
 echo "<table class='table table-striped' id = 'table1'>
     <thead>
