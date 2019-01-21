@@ -1,5 +1,5 @@
 #table1 {
-    width: auto;
+    width: 30%;
     margin-left: 15%;
     margin-top: 5%;
 }
@@ -9,5 +9,16 @@
 }
 
 #pt {
+    margin-left: 15%;
+}
+
+#text {
+    margin-left: 15%;
+    width: 30%;
+    text-align: right;
+    font-size: 1.8em;
+}
+
+#toev {
     margin-left: 15%;
 }

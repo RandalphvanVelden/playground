@@ -37,23 +37,31 @@ echo "<table class='table table-striped' id = 'table1'>
     </tr>
     </thead>
     <tbody>";
-    While($row=$stmt->fetch()){
+    while($row=$stmt->fetch()){
         echo "<tr>";
         echo "<td>" . $row['userid'] . "</td><td>" . $row['naam'] . "</td>><td>" . $row['tebetalen'] . "</td>";
-        echo "<td><a class='btn1' href='dbbestellingverwijderen.php?bestellingenid=" . $row['id'] . "'><i class='fas fa-trash-alt butt' ></i></a></td>";
-        
+        echo "<td><a class='btn1' href='dbbestellingverwijderen.php?bestellingenid=" . $row['id'] . "'><i class='fas fa-trash-alt butt' ></i></a></td>";   
     echo"</tr>";
     }
      echo "</tbody>
     </table>";
+
+    $stmt2 = $conn->query("SELECT SUM(tebetalen) as som FROM bestellingen WHERE userid = $userid");
+    while ($totaal=$stmt2->fetch()){
+        echo "<div id='text'> totaal: ".$totaal['som']."</div>";
+      
+    }
 }
 catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
 
+
+
+
 ?>
 
-<a href="index.php" class="btn btn-success" id="pt">Product toevoegen</a>
+<a href="index.php" class="btn btn-success" id= "toev" id="pt">Product toevoegen</a>
 
   
 

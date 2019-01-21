@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="form.css" />
     <!-- <script src="main.js"></script> -->
 </head>
 <body>
-
+<?php
+include ("navbar.php");
+?>
     <form id ='form' action="dbusertoevoegen.php" method="POST">
     <div class="form-group">
         <label for="formGroupExampleInput">NEW USER</label>
@@ -25,7 +27,7 @@
         <input type="password" class="form-control" id="formGroupExampleInput" name="wachtwoord" placeholder="wachtwoord">
         <input type="password" class="form-control" id="formGroupExampleInput" name="wachtwoord2" placeholder="herhaal wachtwoord" required>
     </div>
-    <button type="submit">voeg toe</button>
+    <button type="submit" class="btn btn-success" id="pt">voeg toe</button>
     </form>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
