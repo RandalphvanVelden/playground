@@ -1,15 +1,12 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        
-       
+
+@extends('layout')
+
+@section('title', 'Welkom')
+
+
+@section('content')
+
+<h1> My first Website </h1>
     
-    </head>
-    <body>
-       <h1> here we go!!!!!!!!!!!</h1>
-       <ul>
-        <li><a href="/contact">contact</a></li>
-        <li><a href="/about">about</a></li> 
-       </ul>
-    </body>
-</html>
+@endsection
+
