@@ -24,15 +24,9 @@
       <td>{{$product->productname}}</td>
       <td>{{$product->price}}</td>
     </tr>
+      @endforeach
   </tbody>
-</table>
-
-
-    
-    
-        
-    @endforeach
-        
+</table>   
     @endsection
 
 </body>

@@ -11,10 +11,9 @@
 |
 */
 Route::get('/', 'PagesController@home');
-// Route::get('/product', 'PagesController@product');
 Route::get('/product', 'ProductController@index');
-
-
+Route::get('/create', 'ProductController@create');
+Route::post('/product', 'ProductController@store');
     
 
 Auth::routes();

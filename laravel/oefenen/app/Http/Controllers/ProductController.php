@@ -16,8 +16,6 @@ class ProductController extends Controller
     {
         $products = Product::all();
 
-       
-        
         return view('/product',['products'=>$products]);
     }
 
@@ -28,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('/create');
     }
 
     /**
@@ -39,7 +37,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->productname = request('productname');
+        $product->price = request('price');
+        
+        $product->save();
+
+        return redirect('/product');
     }
 
     /**
