@@ -86,7 +86,7 @@
 
                 <div class="links">
                     <a href="basicplayer">Basic players</a>
-                    <a href="basicplayer/create">Create Basic Player</a>
+                    <a href="team">Teams</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
