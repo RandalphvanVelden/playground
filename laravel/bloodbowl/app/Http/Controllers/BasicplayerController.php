@@ -37,25 +37,23 @@ class BasicplayerController extends Controller
      */
     public function store(Request $request)
     {
-        $basicplayer = new Basicplayer();
-        $basicplayer->team = request('team');
-        $basicplayer->position = request('position');
-        $basicplayer->cost = request('cost');
-        $basicplayer->qty = request('qty');
-        $basicplayer->move = request('move');
-        $basicplayer->strength = request('strength');
-        $basicplayer->agility = request('agility');
-        $basicplayer->armour = request('armour');
-        $basicplayer->skills = request('skills');
-        $basicplayer->skillChoiceSingleA = request('skillChoiceSingleA');
-        $basicplayer->skillChoiceSingleB = request('skillChoiceSingleB');
-        $basicplayer->skillChoiceSingleC = request('skillChoiceSingleC');
-        $basicplayer->skillChoiceDoubleA = request('skillChoiceDoubleA');
-        $basicplayer->skillChoiceDoubleB = request('skillChoiceDoubleB');
-        $basicplayer->skillChoiceDoubleC = request('skillChoiceDoubleC');
-
-       $basicplayer->save();
-        
+        Basicplayer::create(request([
+        'team',
+        'position',
+        'cost',
+        'qty',
+        'move',
+        'strength',
+        'agility',
+        'armour',
+        'skills',
+        'skillChoiceSingleA',
+        'skillChoiceSingleB',
+        'skillChoiceSingleC',
+        'skillChoiceDoubleA',
+        'skillChoiceDoubleB',
+        'skillChoiceDoubleC'
+        ]));
        
         return redirect('/basicplayer');
     }
@@ -68,7 +66,7 @@ class BasicplayerController extends Controller
      */
     public function show(basicplayer $basicplayer)
     {
-        //
+        // return view('project.show'), compact('project');
     }
 
     /**
@@ -77,9 +75,8 @@ class BasicplayerController extends Controller
      * @param  \App\basicplayer  $basicplayer
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(basicplayer $basicplayer)
     {
-        $basicplayer = basicplayer::find($id);
 
         return view('/bpedit', compact('basicplayer'));
     }
@@ -91,28 +88,25 @@ class BasicplayerController extends Controller
      * @param  \App\basicplayer  $basicplayer
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
-    {
-        $basicplayer = basicplayer::find($id);
-
-       
-        $basicplayer->team = request('team');
-        $basicplayer->position = request('position');
-        $basicplayer->cost = request('cost');
-        $basicplayer->qty = request('qty');
-        $basicplayer->move = request('move');
-        $basicplayer->strength = request('strength');
-        $basicplayer->agility = request('agility');
-        $basicplayer->armour = request('armour');
-        $basicplayer->skills = request('skills');
-        $basicplayer->skillChoiceSingleA = request('skillChoiceSingleA');
-        $basicplayer->skillChoiceSingleB = request('skillChoiceSingleB');
-        $basicplayer->skillChoiceSingleC = request('skillChoiceSingleC');
-        $basicplayer->skillChoiceDoubleA = request('skillChoiceDoubleA');
-        $basicplayer->skillChoiceDoubleB = request('skillChoiceDoubleB');
-        $basicplayer->skillChoiceDoubleC = request('skillChoiceDoubleC');
-
-       $basicplayer->save();
+    public function update(basicplayer $basicplayer)
+    {       
+        $basicplayer->update(request([
+            'team',
+            'position',
+            'cost',
+            'qty',
+            'move',
+            'strength',
+            'agility',
+            'armour',
+            'skills',
+            'skillChoiceSingleA',
+            'skillChoiceSingleB',
+            'skillChoiceSingleC',
+            'skillChoiceDoubleA',
+            'skillChoiceDoubleB',
+            'skillChoiceDoubleC'
+            ]));
         
        
        return redirect('/basicplayer');
@@ -125,9 +119,9 @@ class BasicplayerController extends Controller
      * @param  \App\basicplayer  $basicplayer
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(basicplayer $basicplayer)
     {
-        basicplayer::find($id)->delete();
+        $basicplayer->delete();
         
         return redirect('/basicplayer');
     }
