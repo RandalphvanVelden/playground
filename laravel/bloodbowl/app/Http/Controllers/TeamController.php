@@ -41,37 +41,9 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        // Team::create([
-        // 'name' => request('name'),
-        // 'race' => request('race'),
-        // 'userId' => \Auth::user()->id,
-        // 'reroll' => request('reroll'),
-        // 'rerollValue' => request('rerollValue'),
-        // 'fanfactor' => request('fanfactor'),
-        // 'assistantCoach' => request('assistantCoach'),
-        // 'cheerleader' => request('cheerleader'),
-        // 'apothecary' => request('apothecary'),
-        // 'teamValue' => request('teamValue')
-        // ]);
-         
+        
        $id=array('userid' => \Auth::user()->id);
-    //    return $id;   
-
-    //    $team=array(request([
-    //              'name',
-    //              'race',
-    //              'reroll',
-    //              'rerollValue',
-    //              'fanfactor',
-    //              'assistantCoach',
-    //              'cheerleader',
-    //              'apothecary',
-    //              'teamValue',
-    //             ]));
-
-            // return $team;
-        // $teams=array_merge($id,$team);
-        // return $teams;
+    
 
         Team::create(array_merge($id,request([
                 'name',
