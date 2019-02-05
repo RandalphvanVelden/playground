@@ -63,6 +63,80 @@ class TeamController extends Controller
             'team_id' => $team->id,
             'playernr' => 1,      
         ]);
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 2,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 3,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 4,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 5,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 6,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 7,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 8,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 9,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 10,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 11,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 12,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 13,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 14,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 15,      
+        ]);
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 16,      
+        ]);
 
              return redirect('/team');
     }
