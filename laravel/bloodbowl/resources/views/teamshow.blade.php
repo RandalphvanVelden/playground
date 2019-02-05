@@ -42,7 +42,12 @@
 <td><input class="form-control form-control-sm" type="integer" name="agility" placeholder="" value="{{$player->agility}}"></td>
 <td><input class="form-control form-control-sm" type="integer" name="armour" placeholder="" value="{{$player->armour}}"></td>
 <td><input class="form-control form-control-sm" type="text" name="skills" placeholder="" value="{{$player->skills}}">
-    ,{{$player->extraSkillA}}, {{$player->extraSkillB}}, {{$player->extraSkillC}}, {{$player->extraSkillD}} {{$player->extraSkillE}} {{$player->extraSkillF}}</td>
+    ,<input class="form-control form-control-sm" type="text" name="extraSkillA" placeholder="" value="{{$player->extraSkillA}}"> 
+    ,<input class="form-control form-control-sm" type="text" name="extraSkillB" placeholder="" value="{{$player->extraSkillB}}">
+    ,<input class="form-control form-control-sm" type="text" name="extraSkillC" placeholder="" value="{{$player->extraSkillC}}">
+    ,<input class="form-control form-control-sm" type="text" name="extraSkillD" placeholder="" value="{{$player->extraSkillD}}">
+    ,<input class="form-control form-control-sm" type="text" name="extraSkillE" placeholder="" value="{{$player->extraSkillE}}">
+    ,<input class="form-control form-control-sm" type="text" name="extraSkillF" placeholder="" value="{{$player->extraSkillF}}">
 <td><input type="checkbox" name="$player->missingNextGame" value="{{$player->missingNextGame}}"></td>
 <td><input class="form-control form-control-sm" type="integer" name="niglingInjury" placeholder="" value="{{$player->niglingInjury}}"></td>
 <td><input class="form-control form-control-sm" type="integer" name="completions" placeholder="" value="{{$player->completions}}"></td>
@@ -54,12 +59,12 @@
 <td><input class="form-control form-control-sm" type="integer" name="cost" placeholder="" value="{{$player->cost}}"></td>
 <td><button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i></button></td>
 </form>
-<td>   <form method="POST" action="/player/{{$player->id}}">
+{{-- <td>   <form method="POST" action="/player/{{$player->id}}">
 @method('DELETE')
 @csrf
 <button type="submit"><i class="far fa-trash-alt"></i></button> 
 </form>
-</td>
+</td> --}}
 </tr>
 @endforeach
 @endif 

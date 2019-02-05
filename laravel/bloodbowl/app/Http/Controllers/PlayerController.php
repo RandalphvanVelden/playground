@@ -58,7 +58,7 @@ class PlayerController extends Controller
      */
     public function edit(player $player)
     {
-        //
+        return view('/teamshow', compact('player'));
     }
 
     /**
@@ -70,7 +70,33 @@ class PlayerController extends Controller
      */
     public function update(Request $request, player $player)
     {
-        //
+        $player->update([
+            'team_id' => $team->id,
+            'playernr' => request('playernr'),
+            'name' => request('name'),
+            'position' => request('position'),
+            'cost' => request('cost'),
+            'move'=> request('move'),
+            'strenght' => request('strength'),
+            'agitity' => request('agility'),
+            'armour' => request('armour'),
+            'skills' => request('skills'),
+            'extraSkillA' => request('extraSkillA'),
+            'extraSkillC' => request('extraSkillB'),
+            'extraSkillC' => request('extraSkillC'),
+            'extraSkillD' => request('extraSkillD'),
+            'extraSkillE' => request('extraSkillE'),
+            'extraSkillF' => request('extraSkillF'),
+            'missingNextGame' => request('missingNextGame'),
+            'niglingInjury' => request('niglingInjury'),
+            'completions' => request('completions'),
+            'touchdown' => request('touchdown'),
+            'intercept' => request('intercept'),
+            'casualtie' =>request('casualtie'),
+            'mvp' => request('mvp'),
+            'ssp' => request('ssp')
+            ]);
+
     }
 
     /**
