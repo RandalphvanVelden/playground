@@ -16,7 +16,7 @@
     <input class="form-control form-control-sm" type="integer" name="fanfactor" placeholder="fanfactor" value="{{$team->fanfactor}}">  
     <input class="form-control form-control-sm" type="integer" name="assistantCoach" placeholder="assistant Coaches" value="{{$team->assistantCoach}}">  
     <input class="form-control form-control-sm" type="integer" name="cheerleader" placeholder="cherleaders" value="{{$team->cheerleader}}">  
-    <input class="form-control form-control-sm" type="integer" name="apothecary" placeholder="apothecary" value="{{$team->apothecry}}">  
+    <input class="form-control form-control-sm" type="integer" name="apothecary" placeholder="apothecary" value="{{$team->apothecary}}">  
     <input class="form-control form-control-sm" type="integer" name="teamValue" placeholder="team Value" value="{{$team->teamValue}}">  
     <button type="submit" class="btn btn-primary">edit</button>
     

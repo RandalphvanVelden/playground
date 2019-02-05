@@ -92,12 +92,12 @@ class TeamController extends Controller
     public function update(Request $request, team $team)
     {
 
-        Team::update([
+        $team->update([
                 'name' => request('name'),
                 'race' => request('race'),
                 'userid' => \Auth::user()->id,
                 'reroll' => request('reroll'),
-                'rerollValue' => request('rerollvalue'),
+                'rerollValue' => request('rerollValue'),
                 'fanfactor' => request('fanfactor'),
                 'assistantCoach' => request('assistantCoach'),
                 'cheerleader' => request('cheerleader'),
