@@ -20,11 +20,11 @@
     <td>{{$team->race}}</td>
     <td>{{$team->teamValue}}</td>
     
-{{-- <td><a href="/team/{{$team->id}}/edit"><i class="fas fa-edit"></i></a></td>
+ <td><a href="/team/{{$team->id}}/edit"><i class="fas fa-edit"></i></a></td>
 <td>   <form method="POST" action="/team/{{$team->id}}">
         @method('DELETE')
         @csrf
-    <button type="submit"><i class="far fa-trash-alt"></i></button>  --}}
+    <button type="submit"><i class="far fa-trash-alt"></i></button> 
      </form>
     </td>
     </tr>

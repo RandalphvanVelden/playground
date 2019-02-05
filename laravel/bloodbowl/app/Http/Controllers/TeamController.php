@@ -79,7 +79,7 @@ class TeamController extends Controller
      */
     public function edit(team $team)
     {
-        //
+        return view('/teamedit', compact('team'));
     }
 
     /**
@@ -91,7 +91,21 @@ class TeamController extends Controller
      */
     public function update(Request $request, team $team)
     {
-       //
+
+        Team::update([
+                'name' => request('name'),
+                'race' => request('race'),
+                'userid' => \Auth::user()->id,
+                'reroll' => request('reroll'),
+                'rerollValue' => request('rerollvalue'),
+                'fanfactor' => request('fanfactor'),
+                'assistantCoach' => request('assistantCoach'),
+                'cheerleader' => request('cheerleader'),
+                'apothecary' => request('apothecary'),
+                'teamValue'=> request('teamValue')
+        ]);
+
+             return redirect('/team');
     }
 
     /**
@@ -102,6 +116,8 @@ class TeamController extends Controller
      */
     public function destroy(team $team)
     {
-        //
+        $team->delete();
+        
+        return redirect('/team');
     }
 }
