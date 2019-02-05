@@ -35,7 +35,7 @@ class CreatePlayersTable extends Migration
             $table->boolean('missingNextGame')->default(false);
             $table->integer('niglingInjury')->nullable();
             $table->integer('completions')->nullable();
-            $table->integer('toughdown')->nullable();
+            $table->integer('touchdown')->nullable();
             $table->integer('intercept')->nullable();
             $table->integer('casualtie')->nullable();
             $table->integer('mvp')->nullable();

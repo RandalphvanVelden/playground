@@ -14,7 +14,8 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = player::all();
+        return view('/teamshow', compact('players'));
     }
 
     /**

@@ -54,7 +54,8 @@ class TeamController extends Controller
                 'assistantCoach',
                 'cheerleader',
                 'apothecary',
-                'teamValue'
+                'teamValue',
+                'treasury'
         ])));
 
              return redirect('/team');
@@ -68,7 +69,8 @@ class TeamController extends Controller
      */
     public function show(team $team)
     {
-        //
+        
+       return view('teamshow', compact('team'));
     }
 
     /**
@@ -102,7 +104,8 @@ class TeamController extends Controller
                 'assistantCoach' => request('assistantCoach'),
                 'cheerleader' => request('cheerleader'),
                 'apothecary' => request('apothecary'),
-                'teamValue'=> request('teamValue')
+                'teamValue'=> request('teamValue'),
+                'treasury' => request('treasury')
         ]);
 
              return redirect('/team');

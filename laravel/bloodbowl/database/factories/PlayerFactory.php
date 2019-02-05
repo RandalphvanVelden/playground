@@ -7,3 +7,6 @@ $factory->define(App\player::class, function (Faker $faker) {
         //
     ];
 });
+
+
+?>

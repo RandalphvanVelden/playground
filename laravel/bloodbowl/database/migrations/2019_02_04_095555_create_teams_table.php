@@ -27,6 +27,7 @@ class CreateTeamsTable extends Migration
             $table->integer('cheerleader')->nullable();
             $table->integer('apothecary')->nullable();
             $table->integer('teamValue')->nullable();
+            $table->integer('treasury')->nullable();
         });
     }
 

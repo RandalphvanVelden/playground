@@ -22,3 +22,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/basicplayer', 'BasicplayerController');
 Route::resource('/team', 'TeamController');
+Route::resource('/player', 'PlayerController');

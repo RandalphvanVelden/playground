@@ -15,10 +15,10 @@
             <tbody>
     @foreach($teams as $team)
     <tr>
-    <td>{{$team->userId}}</td>   
-    <td>{{$team->name}}</td>
-    <td>{{$team->race}}</td>
-    <td>{{$team->teamValue}}</td>
+        <td>{{$team->userId}}</td>   
+        <td><a href="/team/{{$team->id}}">{{$team->name}}</a></td>
+        <td>{{$team->race}}</td>
+        <td>{{$team->teamValue}}</td>
     
  <td><a href="/team/{{$team->id}}/edit"><i class="fas fa-edit"></i></a></td>
 <td>   <form method="POST" action="/team/{{$team->id}}">

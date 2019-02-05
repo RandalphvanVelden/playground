@@ -15,7 +15,8 @@
     <input class="form-control form-control-sm" type="integer" name="assistantCoach" placeholder="assistant Coaches">  
     <input class="form-control form-control-sm" type="integer" name="cheerleader" placeholder="cherleaders">  
     <input class="form-control form-control-sm" type="integer" name="apothecary" placeholder="apothecary">  
-    <input class="form-control form-control-sm" type="integer" name="teamValue" placeholder="team Value">  
+    <input class="form-control form-control-sm" type="integer" name="teamValue" placeholder="team Value"> 
+    <input class="form-control form-control-sm" type="integer" name="treasury" placeholder="treasury"> 
     <button type="submit" class="btn btn-primary">save</button>
     
 </form>

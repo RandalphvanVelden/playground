@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\player;
 
 class team extends Model
 {
@@ -10,8 +11,8 @@ class team extends Model
         'id' 
      ];
 
-     public function player()
+     public function players()
      {
-         return $this->hasMany(Player::class);
+         return $this->hasMany(player::class);
      }
 }
