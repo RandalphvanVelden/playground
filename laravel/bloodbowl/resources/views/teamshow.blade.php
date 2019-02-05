@@ -8,6 +8,7 @@
 <table class="table table-striped">
         <thead>
             <tr>
+                <th>nr</th>
                 <th>name</th> 
                 <th>position</th>
                 <th>move</th>
@@ -17,19 +18,20 @@
                 <th>skills</th>
                 <th>miss next match</th>
                 <th>nigling injury</th>
-                <th>completions</th>
-                <th>touchdown</th>
-                <th>intercept</th>
-                <th>casualtie</th>
-                <th>mvp</th>
+                <th>Compl</th>
+                <th>TD</th>
+                <th>Int</th>
+                <th>Cas</th>
+                <th>MVP</th>
                 <th>spp</th>
                 <th>total cost</th>
             </tr>
     </thead>
     <tbody>       
-{{-- @if ($team->players->count()) --}}
+@if ($team->players->count())
 @foreach ($team->players as $player)
 <tr>
+<td>{{$player->playernr}}</td>
 <td>{{$player->name}}</td>
 <td>{{$player->position}}</td>
 <td>{{$player->move}}</td>
@@ -46,17 +48,16 @@
 <td>{{$player->mvp}}</td>
 <td>{{$player->spp}}</td>
 <td>{{$player->cost}}</td>
-{{-- <td><a href="/player/{{$player->id}}/edit"><i class="fas fa-edit"></i></a></td>
+<td><a href="/player/{{$player->id}}/edit"><i class="fas fa-edit"></i></a></td>
 <td>   <form method="POST" action="/player/{{$player->id}}">
 @method('DELETE')
 @csrf
-<button type="submit"><i class="far fa-trash-alt"></i></button>  --}}
-{{-- </form> --}}
-{{-- </td> --}}
+<button type="submit"><i class="far fa-trash-alt"></i></button> 
+</form>
+</td>
 </tr>
-
-
 @endforeach
-{{-- @endif  --}}
+@endif 
+
 
 @endsection

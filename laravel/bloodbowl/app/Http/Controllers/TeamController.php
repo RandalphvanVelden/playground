@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\team;
+use App\player;
 use Illuminate\Http\Request;
 use Illuminate\Suport\Facades\Auth;
 
@@ -44,8 +45,8 @@ class TeamController extends Controller
         
        $id=array('userid' => \Auth::user()->id);
     
-
-        Team::create(array_merge($id,request([
+        
+      $team= Team::create(array_merge($id,request([
                 'name',
                 'race',
                 'reroll',
@@ -57,6 +58,11 @@ class TeamController extends Controller
                 'teamValue',
                 'treasury'
         ])));
+
+        Player::create([
+            'team_id' => $team->id,
+            'playernr' => 1,      
+        ]);
 
              return redirect('/team');
     }

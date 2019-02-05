@@ -19,12 +19,12 @@ class CreatePlayersTable extends Migration
             $table->integer('team_id')->unsigned();
             $table->foreign('team_id')->references('id')->on('teams'); 
             $table->integer('playernr');
-            $table->text('position');
-            $table->integer('cost');
-            $table->integer('move');
-            $table->integer('strength');
-            $table->integer('agility');
-            $table->integer('armour');
+            $table->text('position')->nullable();
+            $table->integer('cost')->nullable();
+            $table->integer('move')->nullable();
+            $table->integer('strength')->nullable();
+            $table->integer('agility')->nullable();
+            $table->integer('armour')->nullable();
             $table->text('skills')->nullable();
             $table->text('extraSkillA')->nullable();
             $table->text('extraSkillB')->nullable();
