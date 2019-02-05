@@ -31,24 +31,29 @@
 @if ($team->players->count())
 @foreach ($team->players as $player)
 <tr>
+<form method="POST" action="/player/{{$player->id}}">
+@method('PATCH')
+@csrf   
 <td>{{$player->playernr}}</td>
-<td>{{$player->name}}</td>
-<td>{{$player->position}}</td>
-<td>{{$player->move}}</td>
-<td>{{$player->strength}}</td>
-<td>{{$player->agility}}</td>
-<td>{{$player->armour}}</td>
-<td>{{$player->skills}},{{$player->extraSkillA}}, {{$player->extraSkillB}}, {{$player->extraSkillC}}, {{$player->extraSkillD}} {{$player->extraSkillE}} {{$player->extraSkillF}}</td>  
-<td>{{$player->missingNextGame}}</td>
-<td>{{$player->niglingInjury}}</td>
-<td>{{$player->completions}}</td>
-<td>{{$player->touchdown}}</td>
-<td>{{$player->intercept}}</td>
-<td>{{$player->casualtie}}</td>
-<td>{{$player->mvp}}</td>
-<td>{{$player->spp}}</td>
-<td>{{$player->cost}}</td>
-<td><a href="/player/{{$player->id}}/edit"><i class="fas fa-edit"></i></a></td>
+<td><input class="form-control form-control-sm" type="text" name="name" placeholder="" value="{{$player->name}}"></td>
+<td><input class="form-control form-control-sm" type="text" name="position" placeholder="" value="{{$player->position}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="move" placeholder="" value="{{$player->move}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="strength" placeholder="" value="{{$player->strength}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="agility" placeholder="" value="{{$player->agility}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="armour" placeholder="" value="{{$player->armour}}"></td>
+<td><input class="form-control form-control-sm" type="text" name="skills" placeholder="" value="{{$player->skills}}">
+    ,{{$player->extraSkillA}}, {{$player->extraSkillB}}, {{$player->extraSkillC}}, {{$player->extraSkillD}} {{$player->extraSkillE}} {{$player->extraSkillF}}</td>
+<td><input type="checkbox" name="$player->missingNextGame" value="{{$player->missingNextGame}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="niglingInjury" placeholder="" value="{{$player->niglingInjury}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="completions" placeholder="" value="{{$player->completions}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="touchdown" placeholder="" value="{{$player->touchdown}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="intercept" placeholder="" value="{{$player->intercept}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="casualtie" placeholder="" value="{{$player->casualtie}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="mvp" placeholder="" value="{{$player->mvp}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="spp" placeholder="" value="{{$player->spp}}"></td>
+<td><input class="form-control form-control-sm" type="integer" name="cost" placeholder="" value="{{$player->cost}}"></td>
+<td><button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i></button></td>
+</form>
 <td>   <form method="POST" action="/player/{{$player->id}}">
 @method('DELETE')
 @csrf
@@ -61,3 +66,4 @@
 
 
 @endsection
+
