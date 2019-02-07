@@ -72,8 +72,8 @@ class PlayerController extends Controller
      */
     public function update(Request $request, player $player)
     {
-        dd($request);
-        return request('position');
+        
+       
         $player->update([
             // 'team_id' => $team->id,
             'playernr' => request('playernr'),
@@ -91,7 +91,7 @@ class PlayerController extends Controller
             'extraSkillD' => request('extraSkillD'),
             'extraSkillE' => request('extraSkillE'),
             'extraSkillF' => request('extraSkillF'),
-            'missingNextGame' => 1,
+            'missingNextGame' => request('missingNextGame'),
             'niglingInjury' => request('niglingInjury'),
             'completions' => request('completions'),
             'touchdown' => request('touchdown'),
