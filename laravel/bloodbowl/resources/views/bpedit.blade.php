@@ -7,7 +7,7 @@
 
 <form method="POST" action="/basicplayer/{{$basicplayer->id}}">
     @method('PATCH')
-    @csrf
+     @csrf 
     <input class="form-control form-control-sm" type="text" name="team" placeholder="team name" value="{{$basicplayer->team}}">
     <input class="form-control form-control-sm" type="text" name="position" placeholder="position" value="{{$basicplayer->position}}">
     <input class="form-control form-control-sm" type="integer" name="cost" placeholder="cost" value="{{$basicplayer->cost}}">    

@@ -76,8 +76,8 @@ class PlayerController extends Controller
         $player->update([
             // 'team_id' => $team->id,
             // 'playernr' => request('playernr'),
-            // 'name' => request('name'),
-            'position' => request('position'),
+            'name' => request('name'),
+            // 'position' => request('position'),
             // 'cost' => request('cost'),
             // 'move'=> request('move'),
             // 'strenght' => request('strength'),
