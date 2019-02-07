@@ -91,7 +91,7 @@ class PlayerController extends Controller
             'extraSkillD' => request('extraSkillD'),
             'extraSkillE' => request('extraSkillE'),
             'extraSkillF' => request('extraSkillF'),
-            'missingNextGame' => request('missingNextGame'),
+            'missingNextGame' => request()->has('missingNextGame'),
             'niglingInjury' => request('niglingInjury'),
             'completions' => request('completions'),
             'touchdown' => request('touchdown'),

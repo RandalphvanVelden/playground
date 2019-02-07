@@ -1,5 +1,5 @@
-@extends('layouts.app');
-@extends('layouts.layout');
+@extends('layouts.app')
+@extends('layouts.layout')
 
 @section('content')
 
@@ -21,7 +21,9 @@
     <input type="text" name="extraSkillD" placeholder="" value="{{$player->extraSkillD}}">
     <input type="text" name="extraSkillE" placeholder="" value="{{$player->extraSkillE}}">
     <input type="text" name="extraSkillF" placeholder="" value="{{$player->extraSkillF}}">
-    <input type="checkbox" name="missingNextGame" value="{{$player->missingNextGame}}">
+    <label class="checkbox" $for="missingNextGame">
+        <input type="checkbox" name="missingNextGame" {{$player->missingNextGame ? 'checked' : ''}}>
+    </label>
     <input type="integer" name="niglingInjury" placeholder="" value="{{$player->niglingInjury}}">
     <input type="integer" name="completions" placeholder="" value="{{$player->completions}}">
     <input type="integer" name="touchdown" placeholder="" value="{{$player->touchdown}}">
@@ -38,8 +40,3 @@
 
 @endsection
 
-{{-- </td>
-<td></td>
-<td></td>
-<td></td>
-<td>
