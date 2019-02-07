@@ -33,7 +33,11 @@
     <input type="integer" name="spp" placeholder="" value="{{$player->spp}}">
     <input type="integer" name="cost" placeholder="" value="{{$player->cost}}">
     <button type="submit" class="btn btn-primary"><i class="fas fa-edit"></i></button>
-
+</form>
+<form method="POST" action="/player/{{$player->id}}">
+    @method('DELETE')
+    @csrf
+<button type="submit"><i class="far fa-trash-alt"></i></button> 
 </form>
 @endforeach
 

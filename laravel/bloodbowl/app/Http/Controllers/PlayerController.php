@@ -75,7 +75,6 @@ class PlayerController extends Controller
         
        
         $player->update([
-            // 'team_id' => $team->id,
             'playernr' => request('playernr'),
             'name' => request('name'),
             'position' => request('position'),
@@ -112,7 +111,33 @@ class PlayerController extends Controller
      */
     public function destroy(player $player)
     {
-        //
+        $player->update([
+            
+            'name' => null,
+            'position' => null,
+            'cost' => null,
+            'move'=> null,
+            'strength' => null,
+            'agility' => null,
+            'armour' => null,
+            'skills' => null,
+            'extraSkillA' => null,
+            'extraSkillC' => null,
+            'extraSkillC' => null,
+            'extraSkillD' => null,
+            'extraSkillE' => null,
+            'extraSkillF' => null,
+            'missingNextGame' => 0,
+            'niglingInjury' => null,
+            'completions' => null,
+            'touchdown' => null,
+            'intercept' => null,
+            'casualtie' => null,
+            'mvp' => null,
+            'ssp' => null
+            ]);
+
+            return back();
     }
 }
 
