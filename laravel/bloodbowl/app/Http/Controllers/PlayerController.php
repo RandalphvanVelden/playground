@@ -72,32 +72,33 @@ class PlayerController extends Controller
      */
     public function update(Request $request, player $player)
     {
-        
+        dd($request);
+        return request('position');
         $player->update([
             // 'team_id' => $team->id,
-            // 'playernr' => request('playernr'),
+            'playernr' => request('playernr'),
             'name' => request('name'),
-            // 'position' => request('position'),
-            // 'cost' => request('cost'),
-            // 'move'=> request('move'),
-            // 'strenght' => request('strength'),
-            // 'agitity' => request('agility'),
-            // 'armour' => request('armour'),
-            // 'skills' => request('skills'),
-            // 'extraSkillA' => request('extraSkillA'),
-            // 'extraSkillC' => request('extraSkillB'),
-            // 'extraSkillC' => request('extraSkillC'),
-            // 'extraSkillD' => request('extraSkillD'),
-            // 'extraSkillE' => request('extraSkillE'),
-            // 'extraSkillF' => request('extraSkillF'),
-            // 'missingNextGame' => request('missingNextGame'),
-            // 'niglingInjury' => request('niglingInjury'),
-            // 'completions' => request('completions'),
-            // 'touchdown' => request('touchdown'),
-            // 'intercept' => request('intercept'),
-            // 'casualtie' =>request('casualtie'),
-            // 'mvp' => request('mvp'),
-            // 'ssp' => request('ssp')
+            'position' => request('position'),
+            'cost' => request('cost'),
+            'move'=> request('move'),
+            'strength' => request('strength'),
+            'agility' => request('agility'),
+            'armour' => request('armour'),
+            'skills' => request('skills'),
+            'extraSkillA' => request('extraSkillA'),
+            'extraSkillC' => request('extraSkillB'),
+            'extraSkillC' => request('extraSkillC'),
+            'extraSkillD' => request('extraSkillD'),
+            'extraSkillE' => request('extraSkillE'),
+            'extraSkillF' => request('extraSkillF'),
+            'missingNextGame' => 1,
+            'niglingInjury' => request('niglingInjury'),
+            'completions' => request('completions'),
+            'touchdown' => request('touchdown'),
+            'intercept' => request('intercept'),
+            'casualtie' =>request('casualtie'),
+            'mvp' => request('mvp'),
+            'ssp' => request('ssp')
             ]);
 
             return back();
