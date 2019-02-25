@@ -6,7 +6,7 @@
 <h1> {{$team->name}}</h1>
 
 @foreach ($team->players as $player)
-<form id="player{{$player->id}}" method="POST" action="/player/{{$player->id}}"> @method('PATCH') @csrf 
+<form method="POST" action="/player/{{$player->id}}"> @method('PATCH') @csrf 
     <input type="text" name="playernr" placeholder="" value="{{$player->playernr}}">
     <input type="text" name="name" placeholder="" value="{{$player->name}}">
     <input type="text" name="position" placeholder="" value="{{$player->position}}">
