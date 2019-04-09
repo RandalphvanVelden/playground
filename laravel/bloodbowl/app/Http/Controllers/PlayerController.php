@@ -60,7 +60,7 @@ class PlayerController extends Controller
      */
     public function edit(player $player)
     {
-        // return view('/teamshow', compact('players'));
+        return view('/playeredit', compact('player'));
     }
 
     /**
@@ -83,23 +83,24 @@ class PlayerController extends Controller
             'agility' => request('agility'),
             'armour' => request('armour'),
             'skills' => request('skills'),
-            'extraSkillA' => request('extraSkillA'),
-            'extraSkillC' => request('extraSkillB'),
-            'extraSkillC' => request('extraSkillC'),
-            'extraSkillD' => request('extraSkillD'),
-            'extraSkillE' => request('extraSkillE'),
-            'extraSkillF' => request('extraSkillF'),
-            'missingNextGame' => request()->has('missingNextGame'),
-            'niglingInjury' => request('niglingInjury'),
-            'completions' => request('completions'),
-            'touchdown' => request('touchdown'),
-            'intercept' => request('intercept'),
-            'casualtie' =>request('casualtie'),
-            'mvp' => request('mvp'),
-            'ssp' => request('ssp')
+            'cost' => request('cost')
+            // 'extraSkillA' => request('extraSkillA'),
+            // 'extraSkillC' => request('extraSkillB'),
+            // 'extraSkillC' => request('extraSkillC'),
+            // 'extraSkillD' => request('extraSkillD'),
+            // 'extraSkillE' => request('extraSkillE'),
+            // 'extraSkillF' => request('extraSkillF'),
+            // 'missingNextGame' => request()->has('missingNextGame'),
+            // 'niglingInjury' => request('niglingInjury'),
+            // 'completions' => request('completions'),
+            // 'touchdown' => request('touchdown'),
+            // 'intercept' => request('intercept'),
+            // 'casualtie' =>request('casualtie'),
+            // 'mvp' => request('mvp'),
+            // 'ssp' => request('ssp')
             ]);
 
-            return back();
+        return back();
     }
 
     /**
