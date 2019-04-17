@@ -15,7 +15,8 @@ class PlayerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   return $player;
+        
         $players = player::all();
         return view('/teamshow', compact('players'));
     }
@@ -71,9 +72,8 @@ class PlayerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, player $player)
-    {
-        
-        $player->update([
+    {   
+            $player->update([
             'playernr' => request('playernr'),
             'name' => request('name'),
             'position' => request('position'),
@@ -84,12 +84,27 @@ class PlayerController extends Controller
             'armour' => request('armour'),
             'skills' => request('skills'),
             'cost' => request('cost')
-            // 'extraSkillA' => request('extraSkillA'),
-            // 'extraSkillC' => request('extraSkillB'),
-            // 'extraSkillC' => request('extraSkillC'),
-            // 'extraSkillD' => request('extraSkillD'),
-            // 'extraSkillE' => request('extraSkillE'),
-            // 'extraSkillF' => request('extraSkillF'),
+            ]);
+
+            return redirect('/team');
+    }
+
+    public function skilledit(player $player)
+    {
+        return view('/playerskilledit', compact('player'));
+    }
+
+    public function skillupdate(Request $request, player $player)
+    {
+        
+        $player->update([
+            'extraSkillA' => request('extraSkillA'),
+            'extraSkillB' => request('extraSkillB'),
+            'extraSkillC' => request('extraSkillC'),
+            'extraSkillD' => request('extraSkillD'),
+            'extraSkillE' => request('extraSkillE'),
+            'extraSkillF' => request('extraSkillF'),
+            'cost' => request('cost')
             // 'missingNextGame' => request()->has('missingNextGame'),
             // 'niglingInjury' => request('niglingInjury'),
             // 'completions' => request('completions'),
@@ -100,8 +115,26 @@ class PlayerController extends Controller
             // 'ssp' => request('ssp')
             ]);
 
-        return back();
+            return redirect('/team');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Remove the specified resource from storage.

@@ -22,4 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/basicplayer', 'BasicplayerController');
 Route::resource('/team', 'TeamController');
+
+// player controllers
 Route::resource('/player', 'PlayerController');
+Route::get('/player/{player}/skill', 'PlayerController@skilledit');
+Route::patch('/player/{player}/skill', 'PlayerController@skillupdate');

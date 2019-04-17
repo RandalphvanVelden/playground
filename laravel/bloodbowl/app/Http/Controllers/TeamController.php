@@ -80,9 +80,9 @@ class TeamController extends Controller
      * @param  \App\team  $team
      * @return \Illuminate\Http\Response
      */
-    public function show(team $team)
+    public function show(request $request, team $team)
     {
-        
+       
        return view('teamshow', compact('team'));
     }
 

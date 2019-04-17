@@ -18,6 +18,7 @@
             <th>AG</th>
             <th>AV</th>
             <th>Skills</th>
+            <th></th>
             <th>Miss Next Match</th>
             <th>Niggling Injuries</th>
             <th>Comp</th>
@@ -47,7 +48,9 @@
                 <td>{{$player->strength}}</td>
                 <td>{{$player->agility}}</td>
                 <td>{{$player->armour}}</td>
-                <td>{{$player->skills}},{{$player->extraSkillA}}, {{$player->extraSkillB}}, {{$player->extraSkillC}}, {{$player->extraSkillD}}, {{$player->extraSkillE}}, {{$player->extraSkillF}}</td>
+                <td>{{$player->skills}},{{$player->extraSkillA}}, {{$player->extraSkillB}}, {{$player->extraSkillC}}, {{$player->extraSkillD}}, 
+                    {{$player->extraSkillE}}, {{$player->extraSkillF}} </td>
+                <td><a href="/player/{{$player->id}}/skill">add skill</a></td>
                 <td>
                     <label class="checkbox" $for="missingNextGame">
                         <input type="checkbox" name="missingNextGame" {{$player->missingNextGame ? 'checked' : ''}}>
