@@ -48,21 +48,51 @@
                 <td>{{$player->strength}}</td>
                 <td>{{$player->agility}}</td>
                 <td>{{$player->armour}}</td>
-                <td>{{$player->skills}},{{$player->extraSkillA}}, {{$player->extraSkillB}}, {{$player->extraSkillC}}, {{$player->extraSkillD}}, 
+                <td>{{$player->skills}}, {{$player->extraSkillA}}, {{$player->extraSkillB}}, {{$player->extraSkillC}}, {{$player->extraSkillD}}, 
                     {{$player->extraSkillE}}, {{$player->extraSkillF}} </td>
                 <td><a href="/player/{{$player->id}}/skill">add skill</a></td>
                 <td>
+                    <form method="POST" action="/player/{{$player->id}}/missingNextGame">@method('PATCH') @csrf 
                     <label class="checkbox" $for="missingNextGame">
-                        <input type="checkbox" name="missingNextGame" {{$player->missingNextGame ? 'checked' : ''}}>
+                        <input type="checkbox" name="missingNextGame" {{$player->missingNextGame ? 'checked' : ''}} onChange="this.form.submit()">  
                     </label>
+                    </form>
                 </td>
-                <td>{{$player->niglingInjury}}</td>
-                <td>{{$player->completions}}</td>
-                <td>{{$player->touchdown}}</td>
-                <td>{{$player->intercept}}</td>
-                <td>{{$player->casualtie}}</td>
-                <td>{{$player->mvp}}</td>
-                <td>{{$player->spp}}</td>
+                <td>
+                    <form method="POST" action="/player/{{$player->id}}/niggling">@method('PATCH') @csrf 
+                        <input type="number" name="niglingInjury" value="{{$player->niglingInjury}}"  onChange="this.form.submit()">  
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/player/{{$player->id}}/completion">@method('PATCH') @csrf 
+                        <input type="number" name="completions" value="{{$player->completions}}"  onChange="this.form.submit()">  
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/player/{{$player->id}}/touchdown">@method('PATCH') @csrf 
+                        <input type="number" name="touchdown" value="{{$player->touchdown}}"  onChange="this.form.submit()">  
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/player/{{$player->id}}/intercept">@method('PATCH') @csrf 
+                        <input type="number" name="intercept" value="{{$player->intercept}}"  onChange="this.form.submit()">  
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/player/{{$player->id}}/casualtie">@method('PATCH') @csrf 
+                        <input type="number" name="casualtie" value="{{$player->casualtie}}"  onChange="this.form.submit()">  
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/player/{{$player->id}}/mvp">@method('PATCH') @csrf 
+                        <input type="number" name="mvp" value="{{$player->mvp}}"  onChange="this.form.submit()">  
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/player/{{$player->id}}/spp">@method('PATCH') @csrf 
+                        <input type="number" name="ssp" value="{{$player->ssp}}"  onChange="this.form.submit()">  
+                    </form>   
+                </td>
                 <td>{{$player->cost}}</td>
                 <td>
                     <form method="POST" action="/player/{{$player->id}}">

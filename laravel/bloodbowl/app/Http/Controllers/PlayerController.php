@@ -105,28 +105,84 @@ class PlayerController extends Controller
             'extraSkillE' => request('extraSkillE'),
             'extraSkillF' => request('extraSkillF'),
             'cost' => request('cost')
-            // 'missingNextGame' => request()->has('missingNextGame'),
-            // 'niglingInjury' => request('niglingInjury'),
-            // 'completions' => request('completions'),
-            // 'touchdown' => request('touchdown'),
-            // 'intercept' => request('intercept'),
-            // 'casualtie' =>request('casualtie'),
-            // 'mvp' => request('mvp'),
-            // 'ssp' => request('ssp')
             ]);
 
             return redirect('/team');
     }
 
+    public function missingNextGameupdate(Request $request, player $player)
+    {
+        
+        $player->update([
+            'missingNextGame' => request()->has('missingNextGame')
+            ]);
+
+            return back();
+    }
+
+    public function nigglingupdate(Request $request, player $player)
+    { 
+        $player->update([
+            'niglingInjury' => request('niglingInjury')
+            ]);
+
+            return back();
+    }
+
+    public function completionupdate(Request $request, player $player)
+    { 
+        $player->update([
+            'completions' => request('completions')           
+            ]);
+
+            return back();
+    }
+
+    public function touchdownupdate(Request $request, player $player)
+    { 
+        $player->update([
+            'touchdown' => request('touchdown')
+            ]);
+
+            return back();
+    }
+
+    public function interceptupdate(Request $request, player $player)
+    { 
+        $player->update([
+            'intercept' => request('intercept')
+            ]);
+
+            return back();
+    }
 
 
+    public function casualtieupdate(Request $request, player $player)
+    { 
+        $player->update([
+            'casualtie' =>request('casualtie')            
+            ]);
 
+            return back();
+    }
 
+    public function mvpupdate(Request $request, player $player)
+    { 
+        $player->update([
+            'mvp' => request('mvp')
+            ]);
 
+            return back();
+    }
 
+    public function sppupdate(Request $request, player $player)
+    { 
+        $player->update([
+            'ssp' => request('ssp')
+            ]);
 
-
-
+            return back();
+    }
 
 
 
